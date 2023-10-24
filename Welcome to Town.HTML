@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Town</title>
+    <style>
+        /* Your CSS styles here */
+        /* Set the background color to a dark shade */
+        body {
+            background-color: #111;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        /* Style the header (e.g., game title) */
+        h1 {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            font-size: 28px;
+        }
+
+        /* Style the section headings */
+        h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        /* Style the tabs container */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        /* Style individual tab labels */
+        .tab {
+            cursor: pointer;
+            color: #f39c12;
+            font-size: 22px;
+            padding: 10px;
+        }
+
+        .tab:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the list container */
+        .list-container {
+            display: none;
+        }
+
+        /* Style list items */
+        .list-item {
+            list-style-type: none;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Town</h1>
+
+    <p>
+        Welcome to Town is a social deduction or murder mystery game server, heavily inspired by <i>Town of Salem,</i> in which players are randomly and privately assigned a faction and role. Each of these factions has its specific win conditions that players must work together to achieve, typically the elimination of another faction. But who can you trust? Because roles are secret, players often lie and fake claim roles to prevent themselves from being executed. It is up to you to deduce who is friend and who is foe.
+    </p>
+
+    <!-- Tab Buttons -->
+    <div class="tabs">
+        <div class="tab" onclick="openTab('rules')">Rules</div>
+        <div class="tab" onclick="openTab('roles')">Roles and Objectives</div>
+        <div class="tab" onclick="openTab('game-info')">Game Info</div>
+	<div class="tab" onclick="openTab('guides')">Role Guides</div>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="rules" class="list-container">
+        <h2>Day/Night Cycle</h2>
+        <p>The game has a day/night cycle in which the game progresses. The cycle goes as following:</p>
+	<h3 style="color: #ff6700;">The Morning</h3>
+	<p>
+	The Morning is when the day starts. Deaths are announced at this time. The Morning phase ends when all deaths have been announced.
+	</p>
+	<h3 style="color: #ff6700;">Discussion Phase</h3>
+	<p>
+	The Discussion Phase is a 24-hour period where living players may discuss who among them should be lynched. It is at this time that it is advised to share any information. Be careful what you believe, however.<br>
+	This phase may be skipped if enough players request.
+	</p>
+	<h3 style="color: #ff6700;">Voting Phase</h3>
+	<p>
+	The Voting phase is when living players may choose to lynch a player. The phase ends when a player is lynched or when 12 hours have passed. There may be up to three trials in one day, but only one player may be lynched.
+	</p>
+	<h4 style="color: #ff6700;">Trial</h4>
+	<p>
+	When a player is on trial, they are given a moment to state their defense. After which, other plays may vote <i>Innocent</i> or <i>Guilty.</i> If a player does not vote, they will automatically <i>Abstain</i> and their vote will not be counted.<br>
+	Once a player is found guilty, they may state their last words before they are executed, and their role and last will is revealed.
+	</p>
+	<h3 style="color: #ff6700;">Night</h3>
+	<p>
+	Night is where most of the action happens. Players may choose to preform their actions. The night ends once everyone has taken their action. This is the time to be afraid, as you might not survive.
+	</p>
+	<h2>Rules</h2>
+	<p>
+	- Game-related information MUST be kept in-game. Do NOT use private messages to talk about the game.<br>
+	- Images may be attatched to last wills, but may not be posted in Day Chat. Screenshots are allowed, but only of notifications given by Game Masters.<br>
+	- Please do not intentionally throw the game. Doing so will result in instant punishment.<br>
+	- Please do not abuse any unintended features. (For Example: Using channels all players may speak in to give information to the living as a dead player.)<br>
+	- Please do not abuse loopholes in the rules and game mechanics.
+	</p>
+    </div>
+
+    <div id="roles" class="list-container">
+        <h2>Roles</h2>
+    <h2 style="color: #46cf00;">TOWN</h2>
+
+    <h3 style="color: #d9ead3;">Town Protective</h3>
+    <p>
+<p>
+    <strong style="color: #46cf00;">Bodyguard</strong><br>
+    - This role has the ability to guard one person at night. If someone attacks the guarded player, then the attacker and the Bodyguard will fight, killing each other, and the guarded player will live.<br>
+    - Bodyguard can only save a player from one direct attack.<br>
+    - If the Bodyguard does not visit, they will protect themselves instead.<br>
+    - The Bodyguard can be healed.<br>
+
+    <strong style="color: #46cf00;">Doctor</strong><br>
+    - This role has the ability to heal one person at night, granting them powerful defense.<br>
+    - Doctor cannot stop unstoppable attacks.<br>
+    - Doctor can heal themself once per game.<br>
+    - Doctor cannot protect the mayor.<br>
+
+    <strong style="color: #46cf00;">Trapper</strong><br>
+    - This role has the ability to place traps that will trigger on visits. The Trapper will know what triggered their trap. If an attacker triggers the trap, the attacker will die.<br>
+    - Traps take a day to build.<br>
+    - The Trapper may only have one trap out at a time. To place another, the trap must be dismantled or triggered.<br>
+    - Trapper can only save a player from one direct attack.<br>
+    - Trapper cannot protect themself.<br>
+
+    <strong style="color: #46cf00;">Crusader</strong><br>
+    - This role has the ability to protect a player at night, granting them powerful defense. One visitor will be attacked. The visitor that is attacked will be randomly chosen.<br>
+    - If nobody visits the target, nobody will die.<br>
+    - Crusader CAN kill innocents.<br>
+    - Crusader cannot stop unstoppable attacks.<br>
+    - Crusader cannot protect themself.<br>
+
+    <strong style="color: #46cf00;">Handler</strong><br>
+    - This role can send guard dogs to protect someone at night. If the target is attacked, the dog will scare off the attacker. The dog will remember the attacker's scent, and if the dog scares off the same attacker again, the Handler will know who the attacker was.<br>
+    - Handler can only save a player from one direct attack.<br>
+    - Handler cannot protect themself.<br>
+</p>
+    </p>
+
+    <h3 style="color: #d9ead3;">Town Investigative</h3>
+    <p>
+    <strong style="color: #46cf00;">Sheriff</strong><br>
+    - This role has the ability to interrogate one player at night.<br>
+    - The sheriff will either see their target as Innocent or Suspicious.<br>
+    - The Disguiser and Hex Master can affect these results.<br>
+    - Some evildoers will appear innocent.<br>
+    - Possible Results:
+</p>
+ <button id="toggleButton">Expand List</button>
+    <ul id="resultList" style="display: none;">
+        <li>Innocent: All town roles, Coven (holding Necronomicon), Arsonist, Werewolf (on normal nights), All Neutral Benigns/Evils/Chaos except Vampire, Disguised Players</li>
+        <li>Suspicious: All Mafia roles, All Coven roles,  Serial Killer, Werewolf (on kill nights), Changeling (if the identity it stole was suspicious), Vampire, Framed players, Hexed players</li>
+    </ul>
+    <script>
+        const toggleButton = document.getElementById("toggleButton");
+        const resultList = document.getElementById("resultList");
+
+        let isCollapsed = true;
+        toggleButton.addEventListener("click", function() {
+            if (isCollapsed) {
+                resultList.style.display = "block";
+                toggleButton.textContent = "Collapse List";
+            } else {
+                resultList.style.display = "none";
+                toggleButton.textContent = "Expand List";
+            }
+            isCollapsed = !isCollapsed;
+        });
+    </script>
+</body>
+<p>
+
+    <strong style="color: #46cf00;">Investigator</strong><br>
+    - This role has the ability to search a player's house, gaining a clue on their role.<br>
+    - The Investigator will receive 3-5 possible roles (NOT RANDOM).<br>
+    - The Disguiser, Hex Master, and Arsonist can affect these results.<br>
+    - Possible Results:
+</p>
+<button id="toggleButton1">Expand List</button>
+    <ul id="resultList1" style="display: none;">
+        <li><span style="color: #46cf00;">Investigator, </span><span style="color: #46cf00;">Tracker, </span><span style="color: #ca0e00;">Consigliere, </span><span style="color: #444444;">Jackal</span></li>
+        <li><span style="color: #46cf00;">Bodyguard, </span><span style="color: #46cf00;">Crusader, </span><span style="color: #ca0e00;">Godfather, </span><span style="color: #995ac4;">Coven Leader, </span><span style="color: #ff8200;">Arsonist</span></li>
+        <li><span style="color: #46cf00;">Medium, </span><span style="color: #46cf00;">Retributionist, </span><span style="color: #ca0e00">Janitor, </span><span style="color: #995ac4;">Necromancer, </span><span style="color: #618452;">Changeling</span></li>
+        <li><span style="color: #46cf00;">Sheriff, </span><span style="color: #995ac4;">Poisoner, </span><span style="color: #694a2c;">Werewolf, </span><span style="color: #999999;">Executioner</span></li>
+        <li><span style="color: #46cf00;">Lookout, </span><span style="color: #ca0e00;">Agent, </span><span style="color: #ca0e00;">Forger, </span><span style="color: #995ac4;">Witch, </span></span><span style="color: #afd712;">Plaguebearer</span></li>
+        <li><span style="color: #46cf00;">Vigilante, </span><span style="color: #46cf00;">Veteran, </span><span style="color: #ca0e00;">Ambusher, </span><span style="color: #f2c043;">Pirate</span></li>
+        <li><span style="color: #46cf00;">Tavern Keeper, </span><span style="color: #995ac4;">Hex Master, </span><span style="color: #add8ff;">Admirer, </span><span style="color: #4b5649;">Vampire</span></li>
+        <li><span style="color: #46cf00;">Doctor, </span><span style="color: #ca0e00;">Hypnotist, </span><span style="color: #995ac4;">Potion Master, </span><span style="color: #548ded;">Serial Killer</span></li>
+        <li><span style="color: #46cf00;">Jailor, </span><span style="color: #ca0e00;">Blackmailer, </span><span style="color: #ca0e00;">Kidnapper, </span></li><span style="color: #995ac4;">Banshee, </span>Guardian Angel
+        <li><span style="color: #46cf00;">Psychic, </span><span style="color:  #995ac4;">Medusa, </span><span style="color: #ffef00;">Survivor, </span><span style="color: #0beefb;">Amnesiac</span></li>
+        <li><span style="color: #46cf00;">Trapper, </span><span style="color: #46cf00;">Handler, </span><span style="color: #ca0e00;">Disguiser, </span><span style="color: #f3d1e8;">Jester</span></li>
+    </ul>
+    <script>
+        const toggleButton1 = document.getElementById("toggleButton1");
+        const resultList1 = document.getElementById("resultList1");
+
+        let isCollapsed1 = true;
+        toggleButton1.addEventListener("click", function() {
+            if (isCollapsed1) {
+                resultList1.style.display = "block";
+                toggleButton1.textContent = "Collapse List";
+            } else {
+                resultList1.style.display = "none";
+                toggleButton1.textContent = "Expand List";
+            }
+            isCollapsed1 = !isCollapsed1;
+        });
+    </script>
+</body>
+<p>
+
+    <strong style="color: #46cf00;">Lookout</strong><br>
+    - This role has the ability to watch a player's home at night. The Lookout will identify up to 3 people who visit their target that night.<br>
+    - The Lookout will be notified if more than 3 players visit their target that night.<br>
+
+    <strong style="color: #46cf00;">Tracker</strong><br>
+    - This role can track a player at night, learning who they visited that night.<br>
+
+    <strong style="color: #46cf00;">Psychic</strong><br>
+    - This role will receive a vision each night. On odd nights, the Psychic will receive the names of 3 players, one of which is guaranteed to be evil. On even nights, the Psychic will receive the names of 2 players, one of which is guaranteed to be innocent.<br>
+    - The Disguiser can affect these results.
+</p>
+
+
+    <h3 style="color: #d9ead3;">Town Killing</h3>
+<p>
+  <strong style="color: #46cf00;">Jailor</strong><br>
+    - This role may choose one person during the day to haul off to jail the following night. The jailed player will not be able to preform any night actions the following night.<br>
+    - The Jailor may talk anonymously with the jailed player. The player will be unable to talk in any team private chats.<br>
+    - The Jailor may choose to execute the player three times per game. The Jailor may not do this on Night 1.<br>
+    - If the Jailor executes an innocent player, the Jailor will loose the ability to jail.<br>
+    - Failing to execute a dangerous role, such as Serial Killer or Werewolf, will result in the Jailor's death.<br>
+    - There can only be one Jailor.<br>
+
+    <strong style="color: #46cf00;">Vigilante</strong><br>
+    - This role can attack a player 3 times per game, dealing a basic attack to their target.<br>
+    - If the Vigilante kills an innocent player, the Vigilante will die from guilt the following night.<br>
+    - The Vigilante can be killed by a Trapper or Bodyguard.<br>
+
+    <strong style="color: #46cf00;">Veteran</strong><br>
+    - This role can go on alert 3 times per game, gaining basic defense and dealing a powerful attack to all visitors.<br>
+    - The Veteran receives no punishment for killing an innocent.<br>
+    - The Veteran cannot be roleblocked or controlled.<br>
+    - There can only be one Veteran.
+</p>
+    <h3 style="color: #d9ead3;">Town Support</h3>
+<p>
+    <strong style="color: #46cf00;">Tavern Keeper</strong><br>
+    - This role can offer a drink to two players at night. The player will be too drunk to perform any actions and be forced to visit the Tavern Keeper. The Tavern Keeper will know the relationship status of their targets.<br>
+    - If the Tavern Keeper roleblocks a Serial Killer, they will die.<br>
+    - The Tavern Keeper cannot roleblock the same target twice in a row.<br>
+    - The Tavern Keeper will not know if their target could not be roleblocked.<br>
+    - The Tavern Keeper cannot be roleblocked.<br>
+    - Relationship Status:
+</p>
+    <button id="toggleButton2">Expand List</button>
+    <ul id="resultList2" style="display: none;">
+        <li>The Tavern Keeper will gain an idea of whether or not their targets are capable of winning together. This completely depends on the target's win conditions.</li>
+        <li>If the two targets may spare eachother, they will appear indifferent to eachother.</li>
+        <li>If the two targets may win together, they will appear to get along.</li>
+        <li>If the two targets must kill eachother, they will appear to not get along.</li>
+    </ul>
+    <script>
+        const toggleButton2 = document.getElementById("toggleButton2");
+        const resultList2 = document.getElementById("resultList2");
+
+        let isCollapsed2 = true;
+        toggleButton2.addEventListener("click", function() {
+            if (isCollapsed2) {
+                resultList2.style.display = "block";
+                toggleButton2.textContent = "Collapse List";
+            } else {
+                resultList2.style.display = "none";
+                toggleButton2.textContent = "Expand List";
+            }
+            isCollapsed2 = !isCollapsed2;
+        });
+    </script>
+</body>
+<p>
+    <strong style="color: #46cf00;">Medium</strong><br>
+    - This role can talk anonymously to the dead at night. If the Medium dies, once per game, the Medium can seance a living player and talk to them that night.<br>
+
+    <strong style="color: #46cf00;">Retributionist</strong><br>
+    - This role can temporarily resurrect the corpse of an innocent player and command the minion to use their ability on a target of the Retributionist's choice. The corpse can be used more than once, but the Retributionist can only use corpses in the graveyard.<br>
+    - The Retributionist cannot be roleblocked or controlled.<br>
+    - There can only be one Retributionist.<br>
+</p>
+
+    <h2 style="color: #ca0e00;">MAFIA</h2>
+
+<p>
+    <strong style="color: #ca0e00;">Godfather</strong><br>
+    - This role may send a private message to another mafia member during the day. There will be no public notification, and nobody else will be able to read the message. The Godfather may only do this 2 times a day.<br>
+    - The Godfather has basic defense.<br>
+    - The Godfather appears to be Innocent to the Sheriff, but if the Godfather kills that night, they will appear Suspicious.<br>
+    - There can only be one Godfather.<br>
+
+    <strong style="color: #ca0e00;">Agent</strong><br>
+    - This role may stalk a player at night, learning who the player visits and who visits that player.<br>
+    - Agent cannot target fellow Mafia members naturally.<br>
+
+    <strong style="color: #ca0e00;">Ambusher</strong><br>
+    - This role has the ability to prepare an ambush outside of a player's house, attacking one visitor.<br>
+    - All visitors will learn who the Ambusher is.<br>
+    - Ambusher can target fellow Mafia members.<br>
+    - There can only be one Ambusher.<br>
+
+    <strong style="color: #ca0e00;">Blackmailer</strong><br>
+    - This role can blackmail a player. The blackmailed player will not be able to speak the following day.<br>
+    - The Blackmailer can read private whispers.<br>
+    - Blackmailer cannot target fellow Mafia members naturally.<br>
+
+    <strong style="color: #ca0e00;">Consigliere</strong><br>
+    - This role can investigate a player each night, learning their exact role.<br>
+    - The Arsonist and Hex Master can affect these results.<br>
+    - Consigliere cannot target fellow Mafia members naturally.<br>
+
+    <strong style="color: #ca0e00;">Disguiser</strong><br>
+    - This role can choose to either disguise a fellow mafia member as a role of their choosing, or frame an innocent player as a role of their choosing.<br>
+    - The Sheriff will see the framed target as suspicious, or the disguised target as innocent.<br>
+    - The Investigator will receive the results of the role the Disguiser chooses.<br>
+    - The Psychic will see framed targets as evil, and disguised targets as innocent.<br>
+    - Disguises only last for one night.<br>
+    - Frames last until the player is checked.<br>
+
+    <strong style="color: #ca0e00;">Forger</strong><br>
+    - This role can forge a player's documents. If the player dies that night, their shown role/last will is replaced with what the Forger selected. The Forger can do this 2 times.<br>
+    - Forger cannot target fellow Mafia members naturally.<br>
+
+    <strong style="color: #ca0e00;">Hypnotist</strong><br>
+    - This role can plant a memory on another player, giving them a false notification of the Hypnotist's choosing.<br>
+    - Hypnotist cannot target fellow Mafia members naturally.<br>
+
+    <strong style="color: #ca0e00;">Janitor</strong><br>
+    - This role can clean a player's house at night. If the player dies, their role and last will is hidden. The Janitor can only do this 3 times.<br>
+    - Janitor cannot target fellow Mafia members naturally.<br>
+
+    <strong style="color: #ca0e00;">Kidnapper</strong><br>
+    - This role may choose one person during the day to kidnap the following night. The kidnapped players will not be able to preform any night actions. The Kidnapper may only do this three times.<br>
+    - The Kidnapper may talk anonymously with the kidnapped player, and will appear to be a Jailor. The player will be unable to talk in any team private chats.<br>
+    - The Kidnapper may choose to exterminate the player once per game. The death will appear to have been from a Jailor.<br>
+    - The Kidnapper is still able to talk in Mafia chat, but the kidnapped player can hear them.<br>
+    - The Kidnapper cannot jail the Jailor, or any player elected as Mayor, no matter their role. However, the Kidnapper can be jailed.<br>
+    - The Kidnapper cannot kidnap fellow mafia members.<br>
+    - There can only be one Kidnapper.
+</p>
+
+    <h2 style="color: #007acc;">NEUTRAL</h2>
+
+    <h3 style="color: #93cbfd;">Neutral Benign</h3>
+ <p>
+    <strong style="color: #0beefb;">Amnesiac</strong><br>
+    - This role has the ability to become another role from the graveyard. The Amnesiac can only become the role of players that have died.<br>
+    - If the Amnesiac is controlled into a player that dies that night, the Amnesiac will remember the role of that player.<br>
+    - If the Amnesiac does not remember a role by the time the game ends, they lose.<br>
+
+    <strong style="color: #ffef00;">Survivor</strong><br>
+    - This role can put on a bullet-proof vest 4 times per game, gaining basic defense.<br>
+    - The Survivor wins as long as they are alive, and can win alongside anyone.<br>
+
+    <strong>Guardian Angel</strong><br>
+    - This role is automatically assigned a target that they must keep alive for the entire game. The Guardian Angel can protect their target twice per game, granting their target powerful defense, preventing them from being executed during the day, and purging them of any dangerous effects (e.g., being doused).<br>
+    - If the Guardian Angel's target dies, the Guardian Angel becomes an Amnesiac.<br>
+    - If the Guardian Angel's target lives to the end, the Guardian Angel wins.<br>
+    - There can only be one Guardian Angel.<br>
+
+    <strong style="color: #add8ff;">Admirer</strong><br>
+    - This role may choose to propose to a player at night. If the player accepts, the Admirer will become bound to them, learning their role, and can only win with them. If the Admirer's lover dies, the Admirer also dies.<br>
+    - The Admirer can protect their target twice per game, granting them powerful defense and purging them of any dangerous effects.<br>
+    - Once per game, the Admirer may divorce their target. This can be done at any time, and their target will be informed. This cannot be done if their target is already dead. The Admirer will be silenced for a day afterward.<br>
+</p>
+
+    <h3 style="color: #93cbfd;">Neutral Evil</h3>
+<p>
+    <strong style="color: #f3d1e8;">Jester</strong><br>
+    - This role, upon being publicly executed, can choose one player to deal an unstoppable attack to. The Jester can only target a player who voted guilty or abstained.<br>
+    - If the Jester is not hung or is killed in a different way, the Jester loses.<br>
+
+    <strong style="color: #999999;">Executioner</strong><br>
+    - This role is randomly assigned a target at the beginning of the game. The Executioner's goal is to get their target publicly executed.<br>
+    - If the Executioner's target dies a different way, the Executioner becomes a Jester.<br>
+    - The Executioner has basic defense.<br>
+    - If the Executioner's target lives, the Executioner loses.<br>
+
+    <strong style="color: #995ac4;">Witch</strong><br>
+    - This role can control a player each night, forcing their victim to use their ability on a player of the Witch's choosing.<br>
+    - The Witch will learn the exact role of their target and receive any messages their target would have received instead.<br>
+    - The Witch can win with anyone except Town.<br>
+    - As long as the Witch is alive, if the Town loses, the Witch wins.<br>
+    - If there are no kill-capable roles left, the Witch automatically loses (Veteran, Bodyguard, Crusader, and Trapper do not count).<br>
+    - The Witch has basic defense but only once.<br>
+
+    <strong style="color: #618452;">Changeling</strong><br>
+    - On night 1, this role can choose a player to "replace," dealing an unstoppable attack to the target and taking their abilities. The Changeling has basic defense until they have stolen an ability. If the Changeling does not select a target, one will be chosen at random.<br>
+    - Once the Changeling replaces someone, the Changeling gains the target's stats, abilities, and TI results (the Changeling will appear to be that role when checked by anyone other than a Witch). The Changeling will not be able to replace another player and will only be able to use the ability it has gained.<br>
+    - As long as the Changeling is alive, if the Town loses, the Changeling wins.<br>
+    - If the Changeling cannot kill, and there are no kill-capable roles left, the Changeling automatically loses (Veteran, Bodyguard, Crusader, and Trapper do not count).
+</p>
+
+
+    <h3 style="color: #93cbfd;">Neutral Killing</h3>
+<p>
+    <strong style="color: #548ded;">Serial Killer</strong><br>
+    - This role can kill one player each night. Every time the Serial Killer successfully kills a player, they gain Bloodlust. After 2 stacks of Bloodlust, the Serial killer's next attack will be powerful, and the Serial Killer will also attack all players who visit their target.<br>
+    - If the Serial Killer fails to kill, their Bloodlust is reset.<br>
+    - The Serial Killer has basic defense.<br>
+    - If the Serial Killer attacks another Serial Killer, both players will know each other's roles and be able to talk to each other at night.<br>
+    - The Serial Killer can win with other Serial Killers.<br>
+    - The Serial Killer will automatically kill anyone that roleblocks them. However, the Serial Killer may choose to be cautious and not kill roleblockers.<br>
+
+    <strong style="color: #ff8200;">Arsonist</strong><br>
+    - This role can douse a player each night. Anyone who visits the Arsonist will automatically be doused. The Arsonist will know who is doused and if they themselves are doused. The Arsonist will not know if a player another arsonist doused is doused.<br>
+    - If the Arsonist takes no action, they will clean any gasoline off themselves.<br>
+    - The Arsonist may choose to ignite all doused targets instead, dealing an unstoppable attack to all doused targets.<br>
+    - The Arsonist has basic defense.<br>
+    - The Arsonist can win with other Arsonists.<br>
+
+    <strong style="color: #694a2c;">Werewolf</strong><br>
+    - This role can choose to kill a player on "Full Moon nights" (even-numbered nights, or Night 5 onward), dealing a powerful attack to the target and all visitors of the target.<br>
+    - If the Werewolf takes no action, they will rampage at home instead, killing all visitors.<br>
+    - The Werewolf has basic defense.<br>
+    - There can only be one Werewolf.
+</p>
+
+    <h3 style="color: #93cbfd;">Neutral Chaos</h3>
+
+<p>
+    <strong style="color: #f2c043;">Pirate</strong><br>
+    - This role may choose a target during the day, that they will duel the following night. At the start of the night, the Pirate may choose to use their Scimitar, Rapier or Pistol, in which the victim may choose to Sidestep, use Chainmail, or Backpedal.<br>
+    - Scimitar beats Sidestep, Rapier beats Chainmail, and Pistol beats Backpedal.<br>
+    - If the target loses, the target is dealt a powerful attack. Otherwise, nothing happens.<br>
+    - Either way, the target is unable to perform any actions that night, even if they are immune to being roleblocked.<br>
+    - If the Pirate kills two players, the Pirate wins. The Pirate can win with anyone, even if the Pirate is dead.<br>
+    - The Pirate cannot be roleblocked or controlled.<br>
+
+    <strong style="color: #afd712;">Plaguebearer</strong><br>
+    - This role may choose to infect a player with the Plague each night. Players will not know they have been infected, and can spread the Plague amongst themselves. When all living players are infected, the Plaguebearer becomes Pestilence, Horseman of the Apocalypse, gaining a powerful rampage attack and invincible defense.<br>
+    - The Plaguebearer has basic defense.<br>
+
+    <strong style="color: #444444;">Jackal (Only in Jackal Mode)</strong><br>
+    - This role starts the game with two recruits. One of them is a Town Member or a Survivor. The other is a Mafia/Coven/Neutral Evil/Neutral Killing role. The recruits are bound to each other and can only win together. A Recruited Mafia/Coven member gains the ability to target their original teammates.<br>
+    - If one recruit dies, the other recruit also dies.<br>
+    - If the Jackal's recruits die, the Jackal may assassinate one person each night, dealing a Powerful Attack.<br>
+    - The Jackal wins with their recruits.<br>
+
+    <strong style="color: #4b5649;">Vampire (only in Vampire Town Mode)</strong><br>
+    - This role will be capable of converting other players into vampires (with a 1-night cooldown after a successful convert) up to a maximum of 4 vampires. Any evil role without defense will die instead of being converted.<br>
+    - Vampires will vote on who to convert when they have the option to. Once a target is chosen, the youngest Vampire will visit that target. If the target is innocent and does not have defense, the target will be converted.
+</p>
+
+    <h2 style="color: #995ac4;">COVEN</h2>
+
+<p>
+    <strong style="color: #995ac4;">Coven Leader</strong><br>
+    - This role may choose to attack a player each night. A successful kill will reduce the time it takes to achieve the Necronomicon by one day.<br>
+    - With the Necronomicon, the Coven Leader gains basic defense. The Coven Leader may choose to deal a powerful attack instead, letting their guard down and making themself vulnerable to attacks.<br>
+
+    <strong style="color: #995ac4;">Hex Master</strong><br>
+    - This role may hex a player each night. Hexed players will show suspicious to sheriffs and will appear to be Hex Master to Consigliere and Investigator. Once every non-coven player is hexed, all hexed players are dealt with an unstoppable attack.<br>
+    - With the Necronomicon, the Hex Master may also choose a second target. The second target will be hexed and dealt a basic attack.<br>
+
+    <strong style="color: #995ac4;">Necromancer</strong><br>
+    - This role can temporarily resurrect the corpse of a player and command the minion to use their ability on a target of the Necromancer's choice. The corpse can be used only once.<br>
+    - The Necromancer cannot be roleblocked or controlled.<br>
+    - With the Necronomicon, the Necromancer may choose to summon a ghoul to deal a basic attack to a target.<br>
+
+    <strong style="color: #995ac4;">Banshee</strong><br>
+    - This role may Deafen a player each night. The deafened player will be unable to read ⁠round-2-day-chat and will be unable to receive whispers. If the Banshee attempts to deafen the same player twice, the target will be dealt a basic attack.<br>
+    - With the Necronomicon, the target will always be dealt a basic attack.<br>
+    - The Banshee can read private whispers.<br>
+
+    <strong style="color: #995ac4;">Poisoner</strong><br>
+    - This role may poison one player each night. The poisoned player will be dealt a basic attack the following night unless healed by a Doctor.<br>
+    - With the Necronomicon, poison kills instantly. If the poisoner attacks a player with natural basic defense, the player will lose their defense.<br>
+
+    <strong style="color: #995ac4;">Potion Master</strong><br>
+    - This role has 3 potions at their disposal, each with a 2-day cooldown.<br>
+    - The Heal potion grants a coven member basic defense.<br>
+    - The Reveal potion checks a non-coven member. These results can be affected by Disguiser and Arsonist.<br>
+    - The Kill potion deals a basic attack.<br>
+    - With the Necronomicon, potions no longer have a cooldown.<br>
+
+    <strong style="color: #995ac4;">Medusa</strong><br>
+    - This role may choose to gaze visitors 3 times per game, turning all players who visit the Medusa into stone. A player who is turned to stone will not have their role or will revealed.<br>
+    - With the Necronomicon, the Medusa gains basic defense and may directly attack a player each night.<br>
+
+    <strong style="color: #995ac4;">Witch (Coven Variant)</strong><br>
+    - This role can control a player each night, forcing their victim to use their ability on a player of the Witch's choosing. The Witch will learn the exact role of their target and receive any messages their target would have received instead.<br>
+    - With the Necronomicon, the Witch gains basic defense for one hit.
+</p>
+    <h3>All COVEN ROLES ARE UNIQUE - THERE CAN ONLY BE ONE OF EACH</h3>
+
+    </div>
+
+    <div id="game-info" class="list-container">
+        <h2>Game Information</h2>
+    <h3 style="color: #ff6700;">The Mafia</h3>
+    <p>
+        - Mafia members may volunteer to kill. If more than one player volunteers, the player that kills will be randomly chosen. Once the player is chosen, that player will choose who to kill instead of using their normal ability.<br>
+        - If nobody volunteers, there will be no kill.
+    </p>
+
+    <h3 style="color: #ff6700;">The Coven</h3>
+    <p>
+        - On Night 3, one member of the Coven will receive the Necronomicon. The Necronomicon will boost the abilities of the player who holds it.<br>
+        - <strong>Necronomicon Priority:</strong> Coven Leader, Hex Master, <i>Potion Master, Necromancer, Banshee, Poisoner, Witch</i> -(THESE 5 ARE RANDOM), Medusa
+    </p>
+
+    <h3 style="color: #ff6700;">Attack VS. Defense</h3>
+    <p>
+        - <strong>None:</strong> Cannot kill/Has no defense.<br>
+        - <strong>Basic:</strong> Basic attack is capable of killing any player with no defense.<br>
+        - <strong>Powerful:</strong> Powerful attack is capable of killing any player under powerful defense.<br>
+        - <strong>Unstoppable:</strong> Unstoppable attack is capable of killing any player under invincible defense (No roles currently exist capable of invincible defense.)
+    </p>
+
+    <h3 style="color: #ff6700;">Barriers</h3>
+    <p>
+        - Some roles have temporary defense. These include: Survivor, Witch, Changeling, Jackal.<br>
+        - Survivor may "vest" 4 times per game, granting themselves basic defense. The rest of the listed roles will have basic defense until they are attacked. If they are attacked again afterwards, they will die.<br>
+        - An evil role attacking a Witch (neutral) or a Changeling will display a unique Defense message.
+    </p>
+
+    <h3 style="color: #ff6700;">Last Wills and Death Notes</h3>
+    <p>
+        - Last wills are shown to everyone when a player dies. At any time, a player may choose to edit their last will. Be careful what you put in it. You could either save or screw over your team.<br>
+        - Death notes are written by the attacker (most evil roles can do this) and are shown to everyone when the attacker kills a player. At any time, a killer may choose to edit their death note. Be careful what you put in it. Some information benefits the town more than you.
+    </p>
+
+    <h3 style="color: #ff6700;">Voting, Trials, and the Election</h3>
+    <p>
+        - During the day, the town may discuss information they gathered during the night. Be wary of those who may lie and feed false information.<br>
+        - Using the information discussed, players may vote on who they think is most suspicious.<br>
+        - <strong>Voting onto the Stand:</strong> Players may vote on who they think is most suspicious. The amount of votes needed to send someone onto the stand will vary depending on the town's population (will require a majority).<br>
+        - <strong>Trials:</strong> There are 3 trials per day cycle. If a dragon is executed then the day ends, regardless of remaining trials.<br>
+        - <strong>Verdicts:</strong> Vote either Innocent or Guilty. You may choose to not vote and instead Abstain.
+    </p>
+
+
+    <h3 style="color: #ff6700;">Whispering</h3>
+    <p>
+        - You may privately whisper to a player. To do this, in your private channel, type "Whisper (player): '(message)'." It will be sent to them, but everyone will know you whispered to them, so make sure to prepare to be questioned!<br> 
+	- Blackmailers and Banshees can read everyone's whispers.
+    </p>
+
+    <h3 style="color: #ff6700;">Blackmailed</h3>
+    <p>
+        - When a player is blackmailed, they cannot talk or whisper, though they still can be whispered to, and they can still vote.<br>  
+	- If put on trial, the blackmailed player may say "I am blackmailed." and nothing else.
+    </p>
+
+    <h3 style="color: #ff6700;">Deafened</h3>
+    <p>
+        - When a player is deafened, they cannot see other players' messages or whispers, though they can still speak while on trial, and they can still vote.<br> 
+	- If deafened again the following night, unless the player is protected or has their own defense, they will die. 
+
+    </p>
+    </div>
+    <div id="guides" class="list-container">
+        <a href="town_guide.html">Town</a><br>
+        <a href="mafia_guide.html">Mafia</a><br>
+        <a href="neutral_guide.html">Neutral</a><br>
+        <a href="coven_guide.html">Coven</a><br>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var tabs = document.getElementsByClassName("list-container");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        // By default, display the first tab when the page loads
+        openTab("rules");
+    </script>
+</body>
+</html>
