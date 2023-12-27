@@ -398,14 +398,6 @@
     - The Executioner has basic defense.<br>
     - If the Executioner's target lives, the Executioner loses.<br>
 
-    <strong style="color: #995ac4;">Witch</strong><br>
-    - This role can control a player each night, forcing their victim to use their ability on a player of the Witch's choosing.<br>
-    - The Witch will learn the exact role of their target and receive any messages their target would have received instead.<br>
-    - The Witch can win with anyone except Town.<br>
-    - As long as the Witch is alive, if the Town loses, the Witch wins.<br>
-    - If there are no kill-capable roles left, the Witch automatically loses (Veteran, Bodyguard, Crusader, and Trapper do not count).<br>
-    - The Witch has basic defense but only once.<br>
-
     <strong style="color: #618452;">Changeling</strong><br>
     - On night 1, this role can choose a player to "replace," dealing an unstoppable attack to the target and taking their abilities. The Changeling has basic defense until they have stolen an ability. If the Changeling does not select a target, one will be chosen at random.<br>
     - Once the Changeling replaces someone, the Changeling gains the target's stats, abilities, and TI results (the Changeling will appear to be that role when checked by anyone other than a Witch). The Changeling will not be able to replace another player and will only be able to use the ability it has gained.<br>
@@ -470,24 +462,29 @@
     <strong style="color: #995ac4;">Coven Leader</strong><br>
     - This role may choose to attack a player each night. A successful kill will reduce the time it takes to achieve the Necronomicon by one day.<br>
     - With the Necronomicon, the Coven Leader gains basic defense. The Coven Leader may choose to deal a powerful attack instead, letting their guard down and making themself vulnerable to attacks.<br>
+    - Coven Leader cannot spawn alone.<br>
 
     <strong style="color: #995ac4;">Hex Master</strong><br>
     - This role may hex a player each night. Hexed players will show suspicious to sheriffs and will appear to be Hex Master to Consigliere and Investigator. Once every non-coven player is hexed, all hexed players are dealt with an unstoppable attack.<br>
     - With the Necronomicon, the Hex Master may also choose a second target. The second target will be hexed and dealt a basic attack.<br>
+    - Hex Master cannot spawn alone.<br>
 
     <strong style="color: #995ac4;">Necromancer</strong><br>
     - This role can temporarily resurrect the corpse of a player and command the minion to use their ability on a target of the Necromancer's choice. The corpse can be used only once.<br>
     - The Necromancer cannot be roleblocked or controlled.<br>
     - With the Necronomicon, the Necromancer may choose to summon a ghoul to deal a basic attack to a target.<br>
+    - When alone, the Necromancer may choose to summon a ghoul to investigate a player at night.<br>
 
     <strong style="color: #995ac4;">Banshee</strong><br>
     - This role may Deafen a player each night. The deafened player will be unable to read ⁠round-2-day-chat and will be unable to receive whispers. If the Banshee attempts to deafen the same player twice, the target will be dealt a basic attack.<br>
     - With the Necronomicon, the target will always be dealt a basic attack.<br>
     - The Banshee can read private whispers.<br>
+    - When alone, the Banshee loses the ability to kill, but will know the role of the player they deafen.<br>
 
     <strong style="color: #995ac4;">Poisoner</strong><br>
     - This role may poison one player each night. The poisoned player will be dealt a basic attack the following night unless healed by a Doctor.<br>
-    - With the Necronomicon, poison kills instantly. If the poisoner attacks a player with natural basic defense, the player will lose their defense.<br>
+    - With the Necronomicon, poison kills instantly. If the Poisoner attacks a player with natural basic defense, the player will lose their defense.<br>
+    - When alone, if the Poisoner attacks a player with natural basic defense, the player will lose their defense.<br>
 
     <strong style="color: #995ac4;">Potion Master</strong><br>
     - This role has 3 potions at their disposal, each with a 2-day cooldown.<br>
@@ -495,16 +492,19 @@
     - The Reveal potion checks a non-coven member. These results can be affected by Disguiser and Arsonist.<br>
     - The Kill potion deals a basic attack.<br>
     - With the Necronomicon, potions no longer have a cooldown.<br>
+    - When alone, potions have a 1-day cooldown.<br>
 
     <strong style="color: #995ac4;">Medusa</strong><br>
     - This role may choose to gaze visitors 3 times per game, turning all players who visit the Medusa into stone. A player who is turned to stone will not have their role or will revealed.<br>
     - With the Necronomicon, the Medusa gains basic defense and may directly attack a player each night.<br>
+    - When alone, the Medusa may directly attack a player each night. The Medusa will know the role of the player they attack.<br>
 
-    <strong style="color: #995ac4;">Witch (Coven Variant)</strong><br>
+    <strong style="color: #995ac4;">Witch</strong><br>
     - This role can control a player each night, forcing their victim to use their ability on a player of the Witch's choosing. The Witch will learn the exact role of their target and receive any messages their target would have received instead.<br>
-    - With the Necronomicon, the Witch gains basic defense for one hit.
+    - With the Necronomicon, the Witch gains basic defense.<br>
+    - When alone, the Witch gains basic defense for one hit.
 </p>
-    <h3>All COVEN ROLES ARE UNIQUE - THERE CAN ONLY BE ONE OF EACH</h3>
+    <h3>All COVEN ROLES ARE UNIQUE - THERE CAN ONLY BE ONE OF EACH<br>If a coven role spawns alone, it will be a Neutral Evil instead. Their necronomicon ability will be replaced with a immediate (but weaker) ability, and they will show Innocent to the Sheriff.</h3>
 
     </div>
 
@@ -534,7 +534,7 @@
     <p>
         - Some roles have temporary defense. These include: Survivor, Witch, Changeling, Jackal.<br>
         - Survivor may "vest" 4 times per game, granting themselves basic defense. The rest of the listed roles will have basic defense until they are attacked. If they are attacked again afterwards, they will die.<br>
-        - An evil role attacking a Witch (neutral) or a Changeling will display a unique Defense message.
+        - An evil role attacking a Witch (neutral), a player healed by a potion, or a Changeling, will display a unique Defense message.
     </p>
 
     <h3 style="color: #ff6700;">Last Wills and Death Notes</h3>
@@ -568,7 +568,7 @@
     <h3 style="color: #ff6700;">Deafened</h3>
     <p>
         - When a player is deafened, they cannot see other players' messages or whispers, though they can still speak while on trial, and they can still vote.<br> 
-	- If deafened again the following night, unless the player is protected or has their own defense, they will die. 
+	- If deafened again the following night, unless the player is protected or has their own defense, they will die. This is only if the Banshee is not alone.
 
     </p>
     </div>
