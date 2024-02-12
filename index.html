@@ -74,6 +74,7 @@
         <div class="tab" onclick="openTab('roles')">Roles and Objectives</div>
         <div class="tab" onclick="openTab('game-info')">Game Info</div>
 	<div class="tab" onclick="openTab('guides')">Role Guides</div>
+	<div class="tab" onclick="openTab('gamemodes')">Gamemodes</div>
     </div>
 
     <!-- Tab Content -->
@@ -194,7 +195,7 @@
 </p>
 <button id="toggleButton1">Expand List</button>
     <ul id="resultList1" style="display: none;">
-        <li><span style="color: #46cf00;">Investigator, </span><span style="color: #46cf00;">Tracker, </span><span style="color: #ca0e00;">Consigliere, </span><span style="color: #444444;">Jackal</span></li>
+        <li><span style="color: #46cf00;">Investigator, </span><span style="color: #46cf00;">Tracker, </span><span style="color: #ca0e00;">Consigliere, </span><span style="color: #444444;">Jackal, </span><span style="color: #afb790;">Auditor</span></li>
         <li><span style="color: #46cf00;">Bodyguard, </span><span style="color: #46cf00;">Crusader, </span><span style="color: #ca0e00;">Godfather, </span><span style="color: #995ac4;">Coven Leader, </span><span style="color: #ff8200;">Arsonist</span></li>
         <li><span style="color: #46cf00;">Medium, </span><span style="color: #46cf00;">Retributionist, </span><span style="color: #ca0e00">Janitor, </span><span style="color: #995ac4;">Necromancer, </span></li>
         <li><span style="color: #46cf00;">Sheriff, </span><span style="color: #995ac4;">Poisoner, </span><span style="color: #694a2c;">Werewolf, </span><span style="color: #999999;">Executioner</span></li>
@@ -203,7 +204,7 @@
         <li><span style="color: #46cf00;">Tavern Keeper, </span><span style="color: #995ac4;">Hex Master, </span><span style="color: #add8ff;">Admirer, </span><span style="color: #4b5649;">Vampire</span></li>
         <li><span style="color: #46cf00;">Doctor, </span><span style="color: #ca0e00;">Hypnotist, </span><span style="color: #995ac4;">Potion Master, </span><span style="color: #548ded;">Serial Killer</span></li>
         <li><span style="color: #46cf00;">Jailor, </span><span style="color: #ca0e00;">Blackmailer, </span><span style="color: #ca0e00;">Kidnapper, </span></li><span style="color: #995ac4;">Banshee, </span>Guardian Angel
-        <li><span style="color: #46cf00;">Psychic, </span><span style="color:  #995ac4;">Medusa, </span><span style="color: #0beefb;">Amnesiac, </span><span style="color: #618452;">Changeling</span></li>
+        <li><span style="color: #46cf00;">Psychic, </span><span style="color:  #995ac4;">Medusa, </span><span style="color: #0beefb;">Amnesiac, </span><span style="color: #618452;">Changeling, </span><span style="color: #b5a1f5;">Starspawn</span></li>
         <li><span style="color: #46cf00;">Trapper, </span><span style="color: #46cf00;">Handler, </span><span style="color: #ca0e00;">Disguiser, </span><span style="color: #f3d1e8;">Jester</span></li>
     </ul>
     <script>
@@ -457,21 +458,25 @@
     - The Pirate may anonymously talk to their victim at night.<br>
     - If the Pirate kills two players, the Pirate wins. The Pirate can win with anyone, even if the Pirate is dead.<br>
     - The Pirate cannot be roleblocked or controlled.<br>
+    - There may only be one Pirate.<br>
 
     <strong style="color: #afd712;">Plaguebearer</strong><br>
     - This role may choose to infect a player with the Plague each night. Players will not know they have been infected, and can spread the Plague amongst themselves. When all living players are infected, the Plaguebearer becomes Pestilence, Horseman of the Apocalypse, gaining a powerful rampage attack and invincible defense.<br>
     - The Plaguebearer can see which players infected who at night.<br>
     - The Plaguebearer has basic defense.<br>
+    - There may only be one Plaguebearer.<br>
 
     <strong style="color: #444444;">Jackal (Only in Jackal Mode)</strong><br>
     - This role starts the game with two recruits with opposing win conditions. Jester, Executioner, Pirate, Vampire and Neutral Benign roles cannot be recruited. The recruits are bound to each other and can only win together. A Recruited Mafia/Coven member gains the ability to target their original teammates.<br>
     - If one recruit dies, the other recruit also dies.<br>
     - If the Jackal's recruits die, the Jackal may assassinate one person each night, dealing a Powerful Attack.<br>
     - The Jackal wins with their recruits.<br>
+    - There may only be one Jackal.<br>
 
     <strong style="color: #7500AF;">Cursed Soul (only in Wandering Souls Mode)</strong><br>
     - This role may swap roles with another player (NOT WIN CONDITIONS). The Cursed Soul cannot swap with Neutral Benign, Evil or Chaos roles, except Plaguebearer.<br>
     - The Cursed Soul wins with other cursed souls, and will know who other Cursed Souls are. Cursed souls win if they are the last remaining faction.<br>
+    - There may be up to four Cursed Souls naturally.<br>
 
     <strong style="color: #4b5649;">Vampire (only in Vampire Town Mode)</strong><br>
     - This role will be capable of converting other players into vampires (with a 1-night cooldown after a successful convert) up to a maximum of 4 vampires. Any evil role without defense will die instead of being converted.<br>
@@ -554,9 +559,9 @@
 
     <h3 style="color: #ff6700;">Barriers</h3>
     <p>
-        - Some roles have temporary defense. These include: Survivor, Witch, Changeling, Jackal.<br>
-        - The listed roles will have basic defense until they are attacked. If they are attacked again afterwards, they will die.<br>
-        - An evil role attacking a Witch (neutral), a player healed by a potion, or a Changeling, will display a unique Defense message.
+        - Some roles have temporary defense. These include: Witch, Changeling and Jackal.<br>
+        - These roles will have basic defense until they are attacked. If they are attacked again afterwards, they will die.<br>
+        - An evil role attacking a role with a barrier will display a unique Defense message. The same message will display for protections preformed by non-town roles.
     </p>
 
     <h3 style="color: #ff6700;">Last Wills and Death Notes</h3>
@@ -599,6 +604,16 @@
         <a href="mafia_guide.html">Mafia</a><br>
         <a href="neutral_guide.html">Neutral</a><br>
         <a href="coven_guide.html">Coven</a><br>
+    </div>
+    </div>
+    <div id="gamemodes" class="list-container">
+        <a href="classic.html">Classic</a><br>
+        <a href="all_any.html">All Any</a><br>
+        <a href="town_traitor.html">Town Traitor</a><br>
+        <a href="jackal_mode.html">Jackals</a><br>
+        <a href="vampire_mode.html">Vampire Town</a><br>
+	<a href="wandering_souls.html">Wandering Souls</a><br>
+	<a href="true_all_any.html">True All Any</a><br>
     </div>
 
     <script>
