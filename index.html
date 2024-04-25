@@ -5,133 +5,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Town Guide</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
 
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 10px;
+        overflow: hidden;
+    }
 
-        h1, h2, h3, h4 {
-            color: #ff6700;
-        }
+    h1, h2, h3, h4 {
+        color: #ff6700;
+    }
 
-        .tabs {
-            overflow: hidden;
-            background-color: #333;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+    .tabs {
+        overflow: hidden;
+        background-color: #333;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
 
-        .tablink {
-            color: #ff6700;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 10px 20px;
-            float: left;
-            margin-right: 10px;
-            border-radius: 5px 5px 0 0;
-            outline: none;
-        }
+    .tablink {
+        color: #ff6700;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        float: left;
+        margin-right: 10px;
+        border-radius: 5px 5px 0 0;
+        outline: none;
+    }
 
-        .tablink:hover {
-            background-color: #444;
-        }
+    .tablink:hover {
+        background-color: #444;
+    }
 
-        .tablink.selected {
-            border: 2px solid #ff6700;
-        }
+    .tablink.selected {
+        border: 2px solid #ff6700;
+    }
 
-        .tabcontent {
-            display: none;
-            padding: 20px;
-            border: 1px solid #555;
-            background-color: #222;
-            border-radius: 0 0 5px 5px;
-        }
+    .tabcontent {
+        display: none;
+        padding: 20px;
+        border: 1px solid #555;
+        background-color: #222;
+        border-radius: 0 0 5px 5px;
+    }
 
-        .subtabs {
-            margin-bottom: 10px;
-        }
+    .subtabs {
+        margin-bottom: 10px;
+    }
 
-        .subtablink {
-            color: #fff;
-            background-color: #333;
-            border: none;
-            cursor: pointer;
-            padding: 5px 10px;
-            margin-right: 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            outline: none;
-        }
+    .subtablink {
+        color: #fff;
+        background-color: #333;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        outline: none;
+    }
 
-        .subtablink[data-color="town"] {
-            color: #46cf00;
-        }
+    .subtablink[data-color="town"] {
+        color: green;
+    }
 
-        .subtablink[data-color="mafia"] {
-            color: #ca0e00;
-        }
+    .subtablink[data-color="mafia"] {
+        color: red;
+    }
 
-        .subtablink[data-color="neutral"] {
-            color: #007acc;
-        }
+    .subtablink[data-color="neutral"] {
+        color: #add8e6;
+    }
 
-        .subtablink[data-color="coven"] {
-            color: #995ac4;
-        }
+    .subtablink[data-color="coven"] {
+        color: purple;
+    }
 
-        .subtablink[data-color="default"] {
-            color: #ff6700;
-        }
+    .subtablink:hover {
+        background-color: #444;
+    }
 
-        .subtablink:hover {
-            background-color: #444;
-        }
+    .subtablink.selected {
+        border: 2px solid #ff6700;
+    }
 
-        .subtablink.selected {
-            border: 2px solid #ff6700;
-        }
+    .subtabcontent {
+        display: none;
+        padding: 10px;
+        border: 1px solid #555;
+        background-color: #333;
+        border-radius: 5px;
+    }
 
-        .subtabcontent {
-            display: none;
-            padding: 10px;
-            border: 1px solid #555;
-            background-color: #111;
-            border-radius: 5px;
-        }
+    /* Added styles for side columns */
+    .left-column,
+    .right-column {
+        background-color: #ddd;
+        height: 100vh;
+        width: 20%;
+        position: fixed;
+        top: 0;
+        display: none; /* Initially hide the side columns */
+    }
 
-        /* Added styles for side columns */
+    .left-column {
+        left: 0;
+    }
+
+    .right-column {
+        right: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        /* Show side columns on screens wider than 768px */
         .left-column,
         .right-column {
-            background-color: #111;
-            height: 100vh;
-            width: 0%;
-            position: fixed;
-            top: 0;
+            display: block;
         }
-
-        .left-column {
-            left: 0;
-        }
-
-        .right-column {
-            right: 0;
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
