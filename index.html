@@ -235,6 +235,7 @@
     <strong style="color: #46cf00;">Trapper</strong><br>
     - Trapper takes one night to build a trap, during which they stay at home. If the trapper is roleblocked or controlled during this time, they will fail to build the trap.<br>
     - Once the trap is built, they may use a night action to place it on a player’s house. They may not place it on their own house naturally. The trap will remain there until it is triggered, even if the Trapper dies.<br>
+    - Starspawn does not affect trap triggers.<br>
     - If the Trapper is controlled when able to place a trap, they will not know where the trap is placed, and will not be able to dismantle it.<br>
     - If the trapped player is visited, the trap will trigger and alert the trapper of all roles that visited. The trap is then used up, and the trapper must build a new one. If the trap is in an unknown location, the Trapper will still know what triggered the trap, unless the Trapper is controlled that night.<br>
     - If one of the visiting roles is an attacking role, they will be dealt a powerful attack by the trap and not attack the player. The trap may only prevent one direct attack.<br>
@@ -286,10 +287,11 @@
 <p>
   <strong style="color: #46cf00;">Jailor</strong><br>
     - This role may choose one person during the day to haul off to jail the following night. The jailed player will not be able to preform any night actions the following night.<br>
+    - Jailing an Arsonist or Plaguebearer instantly douses/infects the Jailor.<br>
     - The Jailor may talk anonymously with the jailed player. The player will be unable to talk in any team private chats.<br>
-    - The Jailor may choose to execute the player three times per game. The Jailor may not do this on Night 1.<br>
+    - The Jailor may choose to execute the player three times per game. The Jailor may not do this on Night 1. Being roleblocked stops execution.<br>
     - If the Jailor executes an innocent player, the Jailor will lose the ability to jail.<br>
-    - Failing to execute a dangerous role, usually Serial Killer, will result in the Jailor's death. The Jailor will die either way if it is a Werewolf on a full moon night.<br>
+    - Failing to execute a dangerous role, usually Serial Killer, will result in the Jailor's death.<br>
     - There can only be one Jailor.<br>
 
     <strong style="color: #46cf00;">Vigilante</strong><br>
@@ -309,7 +311,7 @@
     - This role can offer a drink to two players at night. The player will be too drunk to perform any actions and be forced to visit the Tavern Keeper. The Tavern Keeper will know the relationship status of their targets.<br>
     - If the Tavern Keeper roleblocks a Serial Killer, they will die.<br>
     - The Tavern Keeper cannot roleblock the same target twice in a row.<br>
-    - The Tavern Keeper will not know if their target could not be roleblocked. The target will not be forced to visit the Tavern Keeper if they are immune.<br>
+    - The Tavern Keeper will not know if their target could not be roleblocked. The target will not be forced to visit the Tavern Keeper if they are immune. The Tavern Keeper will still know the relationship status of their targets.<br>
     - The Tavern Keeper cannot be roleblocked.<br>
 
     <strong style="color: #46cf00;">Medium</strong><br>
@@ -323,8 +325,8 @@
     - There can only be one Retributionist.<br>
 
     <strong style="color: #46cf00;">Monarch</strong><br>
-    - Twice per game, this role may knight a player. Any role can be knighted.<br>
-    - A knighted player's vote will count for an extra vote.<br>
+    - Twice per game, this role may knight a player. Any role can be knighted. The charge is taken even if the target dies.<br>
+    - A knighted player's vote will count for an extra vote. This is publicly announced.<br>
     - A Mayor cannot be knighted. If a knighted player is elected, the extra vote is removed and the charge will be returned to the Monarch.<br>
     - There can only be one Monarch.
 </p>
@@ -401,8 +403,8 @@
     - There can only be one Kidnapper.<br>
 
     <strong style="color: #ca0e00;">Moonshiner</strong><br>
-    - This role can offer a drink to a player at night. The player will be too drunk to perform any actions and be forced to visit the Moonshiner. The player will not get hungover from a Moonshiner roleblock.<br>
-    - Once per game, the Moonshiner may add poison to a drink.<br>
+    - This role can offer a drink to a player at night. The player will be too drunk to perform any actions and be forced to remain home. The player will not get hungover from a Moonshiner roleblock.<br>
+    - Once per game, the Moonshiner may add poison to a drink. Poison is a direct basic attack that takes a day to kill.<br>
     - If the Moonshiner roleblocks a Serial Killer, they will die.<br>
     - The Moonshiner will not know if their target could not be roleblocked.<br>
     - Moonshiner cannot target fellow Mafia members naturally.<br>
@@ -418,6 +420,7 @@
 <p>
     <strong style="color: #0beefb;">Amnesiac</strong><br>
     - This role has the ability to become another role from the graveyard. The Amnesiac can only become the role of players that have died.<br>
+    - The Amnesiac will not become the role until day starts. It is publicly announced when Amnesiac remembers a role.<br>
     - If the Amnesiac is controlled into a player that dies that night, the Amnesiac will remember the role of that player.<br>
     - Amnesiac cannot remember the role of players that have been cleaned or stoned.<br>
     - If a unique role is alive, Amnesiac cannot remember that role, even if one exists in the graveyard. If two Amnesiacs attempt to remember the same unique role, the one who gets the role will be randomly chosen.<br>
@@ -431,9 +434,9 @@
     - There can only be one Guardian Angel.<br>
 
     <strong style="color: #add8ff;">Admirer</strong><br>
-    - This role may choose to propose to a player at night. If the player accepts, the Admirer will become bound to them, learning their role, and can only win with them. If the Admirer's lover dies, the Admirer also dies.<br>
-    - If two Admirers attempt to propose to the same person, only one proposal will go through.<br>
-    - The Admirer can protect their target twice per game, granting them powerful defense and purging them of any dangerous effects.<br>
+    - Twice per game, after Night 1, this role may choose to propose to a player during the day. They will propose the following night. If the player accepts, the Admirer will become bound to them, learning their role, and can only win with them. If the Admirer's lover dies, the Admirer also dies. The Admirer can win while dead, as long as their lover is alive.<br>
+    - If two Admirers attempt to propose to the same person, only one proposal will go through. The Admirer cannot propose to someone who another admirer already proposed to.<br>
+    - The Admirer can protect their target twice per game, granting them powerful defense and purging them of any dangerous effects. Admirer cannot do this the night they propose.<br>
     - Once per game, the Admirer may divorce their target. This can be done at any time, and their target will be informed. This cannot be done if their target is already dead. The Admirer will be silenced for a day afterward.<br>
 </p>
                 <h3 style="color: #93cbfd;">Neutral Evil</h3>
