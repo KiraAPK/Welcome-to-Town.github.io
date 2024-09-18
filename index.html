@@ -113,6 +113,37 @@
         background-color: #333;
         border-radius: 5px;
     }
+    .subsubtabs {
+        margin-bottom: 10px;
+    }
+
+    .subsubtablink {
+        color: #fff;
+        background-color: #333;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        outline: none;
+    }
+
+    .subsubtablink:hover {
+        background-color: #444;
+    }
+
+    .subsubtablink.selected {
+        border: 2px solid #ff6700;
+    }
+
+    .subsubtabcontent {
+        display: none;
+        padding: 10px;
+        border: 1px solid #555;
+        background-color: #333;
+        border-radius: 5px;
+    }
 
     /* Added styles for side columns */
     .left-column,
@@ -139,6 +170,112 @@
             display: block;
         }
     }
+
+    /* Dark background for the entire card */
+    .role-card {
+	max-width: 400px;
+        background-color: #333;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        margin-bottom: 20px;
+        color: #fff;
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+        border: 2px solid #ff6700;
+    }
+
+    .image-container {
+        text-align: center;
+    }
+
+    .image-container img {
+        display: inline-block;
+    }
+
+
+    /* Role Title Styling */
+    .role-title {
+        font-size: 2em;
+        text-shadow: 2px 2px 0px #000;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Role description */
+    .role-description {
+        font-size: 1.3em;
+	text-align: center;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    /* Abilities list */
+    .role-abilities {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .role-abilities li {
+        margin-bottom: 8px;
+        text-shadow: 1px 1px 0px #000;
+    }
+
+    /* Icons for Attack and Defense */
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
+    /* Alignment section, similar to Town of Salem card text style */
+    .role-alignment {
+        font-size: 1.3em;
+        margin-top: 15px;
+        text-shadow: 1px 1px 0px #000;
+    }
+
+    /* Attributes heading */
+    .role-attributes-title {
+        font-size: 1.3em;
+        color: #ff6700;
+        text-shadow: 1px 1px 0px #000;
+        margin-bottom: 5px;
+    }
+
+    /* Attributes text */
+    .role-attributes {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    /* Highlighted text for labels */
+    .highlight {
+        font-size: 1.3em;
+	color: #ff6700;
+        text-shadow: 1px 1px 0px #000;
+        font-weight: bold;
+    }
+
+    /* Styling for Attack and Defense section */
+    .role-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    .role-stat {
+        font-size: 1.2em;
+        color: #fff;
+        text-align: center;
+    }
+
+    .role-stat img {
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+    }
+
 </style>
 </head>
 
@@ -215,14 +352,44 @@
 
             <div id="rolesTown" class="subtabcontent">
 	<p>The "Innocent" faction, these roles win when all evildoers are dead.</p>
-                <h3 style="color: #d9ead3;">Town Protective</h3>
+            <div class="subsubtabs">
+                <button class="subsubtablink selected" style="color: #d9ead3;" onclick="openSubSubTab('TownProtective')">Protective</button>
+                <button class="subsubtablink" style="color: #d9ead3;" onclick="openSubSubTab('TownInvestigative')">Investigative</button>
+                <button class="subsubtablink" style="color: #d9ead3;" onclick="openSubSubTab('TownKilling')">Killing</button>
+                <button class="subsubtablink" style="color: #d9ead3;" onclick="openSubSubTab('TownSupport')">Support</button>
+            </div>
+        	<div id="TownProtective" class="subsubtabcontent">
 <p>
-    <strong style="color: #46cf00;">Bodyguard</strong><br>
-    - This role has the ability to guard one person at night.<br>
-    - If the Bodyguard does not visit, they will protect themselves instead.<br>
-    - If the Bodyguard's target is dealt a direct attack, the Bodyguard will instead deal a powerful attack to the attacker, but also be dealt a powerful attack themself.<br>
-    - The Doctor and Crusader can prevent a Bodyguard from dying after saving someone.<br>
-    - Bodyguard can only save a player from one direct attack.<br>
+<div class="role-card">
+	    <div class="image-container">
+    		<img src="path/to/bodyguard-icon.png" alt="Role Icon">
+	    </div>
+    <h3 class="role-title" style="color: #46cf00;">Bodyguard</h3>
+    <p class="role-description">An ex-soldier who makes money by selling protection.</p>
+
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="path/to/sword-icon.png" alt="Attack Icon"> <span>Powerful</span>
+        </div>
+        <div class="role-stat">
+            <img src="path/to/shield-icon.png" alt="Defense Icon"> <span>None</span>
+        </div>
+    </div>
+
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #46cf00;">Town (Protective)</span></p>
+    <p class="highlight">Goal:</p>
+	<li>Lynch every criminal and evildoer.</li>
+
+    <p class="highlight">Abilities:</p>
+        <li> This role has the ability to guard one person at night.</li>
+	<li> If the Bodyguard does not visit, they will protect themselves instead.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li> If the Bodyguard's target is dealt a direct attack, the Bodyguard will instead deal a powerful attack to the attacker, but also be dealt a powerful attack themself.</li>
+        <li> The Doctor and Crusader can prevent a Bodyguard from dying after saving someone.</li>
+	<li> Bodyguard can only save a player from one direct attack.</li>
+</div>
+
 
     <strong style="color: #46cf00;">Doctor</strong><br>
     - This role has the ability to heal one person at night, granting them powerful defense.<br>
@@ -250,7 +417,8 @@
     - Handler can only save a player from one direct attack.<br>
     - Handler cannot protect themself naturally.<br>
 </p>
-                <h3 style="color: #d9ead3;">Town Investigative</h3>
+            </div>
+        	<div id="TownInvestigative" class="subsubtabcontent">
 <p>
     <strong style="color: #46cf00;">Sheriff</strong><br>
     - This role has the ability to interrogate one player at night.<br>
@@ -281,7 +449,8 @@
     - The Spy can read private whispers.<br>
     - There can only be one Spy.
 </p>
-                <h3 style="color: #d9ead3;">Town Killing</h3>
+		</div>
+        	<div id="TownKilling" class="subsubtabcontent">
 <p>
   <strong style="color: #46cf00;">Jailor</strong><br>
     - This role may choose one person during the day to haul off to jail the following night. The jailed player will not be able to preform any night actions the following night.<br>
@@ -303,7 +472,8 @@
     - The Veteran cannot be roleblocked or controlled.<br>
     - There can only be one Veteran.
 </p>
-                <h3 style="color: #d9ead3;">Town Support</h3>
+		</div>
+        	<div id="TownSupport" class="subsubtabcontent">
 <p>
     <strong style="color: #46cf00;">Tavern Keeper</strong><br>
     - This role can offer a drink to two players at night. The player will be too drunk to perform any actions and be forced to visit the Tavern Keeper. The Tavern Keeper will know the relationship status of their targets.<br>
@@ -328,6 +498,7 @@
     - A Mayor cannot be knighted. If a knighted player is elected, the extra vote is removed and the charge will be returned to the Monarch.<br>
     - There can only be one Monarch.
 </p>
+		</div>
             </div>
 
             <div id="rolesMafia" class="subtabcontent">
@@ -929,6 +1100,21 @@
             }
 
             document.getElementById(subTabName).style.display = "block";
+            event.currentTarget.classList.add("selected");
+        }
+
+        function openSubSubTab(subsubTabName) {
+            var subsubtabs = document.getElementsByClassName("subsubtabcontent");
+            for (var i = 0; i < subsubtabs.length; i++) {
+                subsubtabs[i].style.display = "none";
+            }
+
+            var subsubtablinks = document.getElementsByClassName("subsubtablink");
+            for (var i = 0; i < subsubtablinks.length; i++) {
+                subsubtablinks[i].classList.remove("selected");
+            }
+
+            document.getElementById(subsubTabName).style.display = "block";
             event.currentTarget.classList.add("selected");
         }
     </script>
