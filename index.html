@@ -821,7 +821,13 @@
 
             <div id="rolesNeutral" class="subtabcontent">
 	<p>Win condition varies.</p>
-                <h3 style="color: #93cbfd;">Neutral Benign</h3>
+            <div class="subsubtabs">
+                <button class="subsubtablink selected" style="color: #d9ead3;" onclick="openSubSubTab('NeutralBenign')">Benign</button>
+                <button class="subsubtablink" style="color: #d9ead3;" onclick="openSubSubTab('NeutralEvil')">Evil</button>
+                <button class="subsubtablink" style="color: #d9ead3;" onclick="openSubSubTab('NeutralKilling')">Killing</button>
+                <button class="subsubtablink" style="color: #d9ead3;" onclick="openSubSubTab('NeutralChaos')">Chaos</button>
+            </div>
+        	<div id="NeutralBenign" class="subsubtabcontent">
 <p>
     <strong style="color: #0beefb;">Amnesiac</strong><br>
     - This role has the ability to become another role from the graveyard. The Amnesiac can only become the role of players that have died.<br>
@@ -844,7 +850,8 @@
     - The Admirer can protect their target twice per game, granting them powerful defense and purging them of any dangerous effects. Admirer cannot do this the night they propose.<br>
     - Once per game, the Admirer may divorce their target. This can be done at any time, and their target will be informed. This cannot be done if their target is already dead. The Admirer will be silenced for a day afterward.<br>
 </p>
-                <h3 style="color: #93cbfd;">Neutral Evil</h3>
+		</div>
+        	<div id="NeutralEvil" class="subsubtabcontent">
 <p>
     <strong style="color: #f3d1e8;">Jester</strong><br>
     - This role, upon being publicly executed, can choose one player to deal an unstoppable attack to. The Jester can only target a player who voted guilty or abstained.<br>
@@ -878,7 +885,8 @@
     - The Starspawn has a Basic Defense barrier, and will lose this barrier once attacked.<br>
     - There can only be one Starspawn.
 </p>
-                <h3 style="color: #93cbfd;">Neutral Killing</h3>
+		</div>
+        	<div id="NeutralKilling" class="subsubtabcontent">
 <p>
     <strong style="color: #548ded;">Serial Killer</strong><br>
     - This role can kill one player each night. Every time the Serial Killer successfully kills a player, they gain Bloodlust. After 2 stacks of Bloodlust, the Serial killer's next attack will be powerful, and the Serial Killer will also attack all players who visit their target. The Serial Killer keeps these boosts until they fail to kill someone.<br>
@@ -910,7 +918,8 @@
     - The Werewolf has basic defense.<br>
     - There can only be one Werewolf.
 </p>
-                <h3 style="color: #93cbfd;">Neutral Chaos</h3>
+		</div>
+        	<div id="NeutralChaos" class="subsubtabcontent">
 <p>
     <strong style="color: #f2c043;">Pirate</strong><br>
     - This role may choose a target during the day, that they will duel the following night. At the start of the night, the Pirate may choose to use their Scimitar, Rapier or Pistol, in which the victim may choose to Sidestep, use Chainmail, or Backpedal.<br>
@@ -958,6 +967,7 @@
     - If the target is innocent and does not have defense, the target will be converted.<br>
     - Vampire is seen as an attacker, no matter who the target is.
 </p>
+		</div>
             </div>
 
             <div id="rolesCoven" class="subtabcontent">
