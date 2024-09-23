@@ -1393,37 +1393,152 @@
 		</div>
         	<div id="NeutralEvil" class="subsubtabcontent">
 <p>
-    <strong style="color: #f3d1e8;">Jester</strong><br>
-    - This role, upon being publicly executed, can choose one player to deal an unstoppable attack to. The Jester can only target a player who voted guilty or abstained.<br>
-    - If the Jester is not hung or is killed in a different way, the Jester loses.<br>
+<div class="role-card">
+        <div class="image-container">
+            <img src="images/bodyguard-icon.png" alt="Role Icon">
+        </div>
+    <h3 class="role-title" style="color: #f3d1e8;">Jester</h3>
+    <p class="role-description">A crazed lunatic whose life goal is to be publicly executed.</p>
 
-    <strong style="color: #999999;">Executioner</strong><br>
-    - This role is randomly assigned a target at the beginning of the game. This player can be any town role, excluding Jailor. The Executioner's goal is to get their target publicly executed.<br>
-    - If the Executioner's target dies before being lynched, the Executioner becomes a Jester.<br>
-    - The Executioner has basic defense.<br>
-    - If the Executioner's target lives, the Executioner loses.<br>
-    <br>
-    <b>The remaining NE all have the same win condition: Live to see the town lose the game. If there are no kill-capable roles left AND the NE is the last evil role, then they will automatically lose. Solo Coven roles will function in the same way.</b><br>
-    <br>
-    <strong style="color: #618452;">Changeling</strong><br>
-    - This role must choose a target night 1. If they do not, one will be chosen at random. This player cannot be a Vampire, Cursed Soul, Neutral Benign, Jester or Executioner.<br>
-    - The target will be dealt an unstoppable attack. The Changeling then gains the stats, abilities and investigative results of this player, only bypassed by roles that cannot be fooled.<br>
-    - Until the Changeling replaces someone, they will have basic defense.<br>
-    - The Changeling can only replace a player once.<br>
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
+        </div>
+        <div class="role-stat">
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>None</span>
+        </div>
+    </div>
 
-    <strong style="color: #afb790;">Auditor</strong><br>
-    -This role has two main abilities: Audit and Smokebomb. The Auditor may choose which ability to use.<br>
-    - Auditing a player roleblocks them and removes 1 ability charge. The Auditor will learn the victim's role, regardless of whether or not it was successful.<br>
-    - Using a smokebomb on a player obscures all feedback, preventing visitors from getting results. The Auditor will learn the victim's role.<br>
-    - The Auditor may choose to smokebomb the jailor if jailed.<br>
-    - The Auditor has a Basic Defense barrier, and will lose this barrier once attacked.<br>
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #f3d1e8;">Neutral (Evil)</span></p>
+    <p class="highlight">Goal:</p>
+    <li>Get yourself lynched by any means necessary.</li>
 
-    <strong style="color: #b5a1f5;">Starspawn</strong><br>
-    - This role may choose to isolate a player each night. All visitors will be Starbound. Starbound does not affect direct attackers. The Starspawn will know the roles of everyone who visited the target.<br>
-    - Being starbound roleblocks the victim. This will have a different message than a normal roleblock. Players immune to Starbound will know they were attempted Starbound.<br>
-    - During the day, the Starspawn may choose to activate Daybreak, which will prevent all other players from using day abilities.<br>
-    - The Starspawn has a Basic Defense barrier, and will lose this barrier once attacked.<br>
-    - There can only be one Starspawn.
+    <p class="highlight">Abilities:</p>
+    <li>This role, upon being publicly executed, can choose one player to deal an unstoppable attack to.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li>The Jester can only target a player who voted guilty or abstained.</li>
+	<li>If the Jester is not hung or is killed in a different way, the Jester loses.</li>
+</div>
+
+<div class="role-card">
+        <div class="image-container">
+            <img src="images/bodyguard-icon.png" alt="Role Icon">
+        </div>
+    <h3 class="role-title" style="color: #999999;">Executioner</h3>
+    <p class="role-description">An obsessed lyncher who will stop at nothing to execute their target.</p>
+
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
+        </div>
+        <div class="role-stat">
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+        </div>
+    </div>
+
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #999999;">Neutral (Evil)</span></p>
+    <p class="highlight">Goal:</p>
+    <li>Get your target lynched at any cost.</li>
+
+    <p class="highlight">Abilities:</p>
+    <li>This role is randomly assigned a target at the beginning of the game. This player can be any town role, excluding Jailor.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li>If the Executioner's target dies before being lynched, the Executioner becomes a Jester.</li>
+	<li>If the Executioner's target lives, the Executioner loses.</li>
+</div>
+
+<div class="role-card">
+        <div class="image-container">
+            <img src="images/bodyguard-icon.png" alt="Role Icon">
+        </div>
+    <h3 class="role-title" style="color: #618452;">Changeling</h3>
+    <p class="role-description">A shapeshifter who copies others.</p>
+
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="images/sword-icon.png" alt="Attack Icon"> <span>Unstoppable</span>
+        </div>
+        <div class="role-stat">
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+        </div>
+    </div>
+
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #618452;">Neutral (Evil)</span></p>
+    <p class="highlight">Goal:</p>
+    <li>Survive to see Town lose the game.</li>
+
+    <p class="highlight">Abilities:</p>
+    <li>This role must choose a target as soon as possible. If they do not, one will be chosen at random. This player cannot be a Vampire, Cursed Soul, Neutral Benign, Jester or Executioner.</li>
+    <li>The target will be dealt an unstoppable attack. The Changeling then gains the stats, abilities and investigative results of this player, only bypassed by roles that cannot be fooled.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li>Until the Changeling replaces someone, they will have basic defense.</li>
+	<li>The Changeling can only replace a player once.</li>
+</div>
+
+<div class="role-card">
+        <div class="image-container">
+            <img src="images/bodyguard-icon.png" alt="Role Icon">
+        </div>
+    <h3 class="role-title" style="color: #afb790;">Auditor</h3>
+    <p class="role-description">A corrupt tax collector who uses their status and connections for evil.</p>
+
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
+        </div>
+        <div class="role-stat">
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+        </div>
+    </div>
+
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #afb790;">Neutral (Evil)</span></p>
+    <p class="highlight">Goal:</p>
+    <li>Survive to see Town lose the game.</li>
+
+    <p class="highlight">Abilities:</p>
+    <li>This role has two main abilities: Audit and Smokebomb. The Auditor may choose which ability to use.</li>
+    <li>Auditing a player roleblocks them and removes 1 ability charge. The Auditor will learn the victim's role, regardless of whether or not it was successful.</li>
+    <li>Using a smokebomb on a player obscures all feedback, preventing visitors from getting results. The Auditor will learn the victim's role.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li>The Auditor may choose to smokebomb the jailor if jailed.</li>
+	<li>The Auditor has a Basic Defense barrier, and will lose this barrier once attacked.</li>
+</div>
+
+<div class="role-card">
+        <div class="image-container">
+            <img src="images/bodyguard-icon.png" alt="Role Icon">
+        </div>
+    <h3 class="role-title" style="color: #b5a1f5;">Starspawn</h3>
+    <p class="role-description">Ok actually, what the fuck is the lore of this thing?</p>
+
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
+        </div>
+        <div class="role-stat">
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+        </div>
+    </div>
+
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #b5a1f5;">Neutral (Evil)</span></p>
+    <p class="highlight">Goal:</p>
+    <li>Survive to see Town lose the game.</li>
+
+    <p class="highlight">Abilities:</p>
+    <li>This role may choose to isolate a player each night. All visitors will be Starbound.</li>
+    <li>The Starspawn will know the roles of everyone who visited the target.</li>
+    <li>During the day, the Starspawn may choose to activate Daybreak, which will prevent all other players from using day abilities.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li>Being starbound roleblocks the victim. This will have a different message than a normal roleblock. Players immune to Starbound will know they were attempted Starbound.</li>
+	<li>Starbound does not affect direct attackers.</li>
+	<li>The Starspawn has a Basic Defense barrier, and will lose this barrier once attacked.</li>
+	<li>There can only be one Starspawn.</li>
+</div>
 </p>
 		</div>
         	<div id="NeutralKilling" class="subsubtabcontent">
