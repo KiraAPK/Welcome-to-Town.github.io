@@ -484,33 +484,6 @@
 	<li>Crusader cannot stop unstoppable attacks.</li>
 	<li>Crusader cannot protect themself naturally.</li>
 </div>
-
-<div class="role-card">
-	    <div class="image-container">
-    		<img src="images/bodyguard-icon.png" alt="Role Icon">
-	    </div>
-    <h3 class="role-title" style="color: #46cf00;">Handler</h3>
-    <p class="role-description">A police dog breeder who uses their dogs to protect others.</p>
-
-    <div class="role-stats">
-        <div class="role-stat">
-            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
-        </div>
-        <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>None</span>
-        </div>
-    </div>
-
-    <p class="role-alignment"><span>Alignment:</span> <span style="color: #46cf00;">Town (Protective)</span></p>
-    <p class="highlight">Goal:</p>
-	<li>Lynch every criminal and evildoer.</li>
-
-    <p class="highlight">Abilities:</p>
-	<li>TBA, needs reworked</li>
-
-    <p class="role-attributes-title">Attributes:</p>
-        <li>TBA, needs reworked</li>
-</div>
 		</p>
             </div>
         	<div id="TownInvestigative" class="subsubtabcontent">
@@ -651,6 +624,7 @@
     <p class="role-attributes-title">Attributes:</p>
         <li>On odd nights, the Psychic will receive the names of 3 players, one of which is guaranteed to be evil.</li>
 	<li>On even nights, the Psychic will receive the names of 2 players, one of which is guaranteed to be innocent.</li>
+	<li>All Town Roles, as well as Insane (NOT DELUSIONAL) and Neutral Benign roles will appear Innocent.</li>
 	<li>The Disguiser and Hex Master can affect these results.</li>
 </div>
 
@@ -801,6 +775,7 @@
 
     <p class="highlight">Abilities:</p>
 	<li>This role may place a mirror at someone’s house at night, absorbing one direct attack. The Trickster will know what attack they absorbed.</li>
+	<li>The Trickster may target themself once per game.</li>
 
     <p class="role-attributes-title">Attributes:</p>
         <li>Mirrors function as a normal protect and only last one night.</li>
@@ -1453,61 +1428,6 @@
 		</div>
         	<div id="NeutralEvil" class="subsubtabcontent">
 <p>
-<div class="role-card">
-        <div class="image-container">
-            <img src="images/bodyguard-icon.png" alt="Role Icon">
-        </div>
-    <h3 class="role-title" style="color: #f3d1e8;">Jester</h3>
-    <p class="role-description">A crazed lunatic whose life goal is to be publicly executed.</p>
-
-    <div class="role-stats">
-        <div class="role-stat">
-            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
-        </div>
-        <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>None</span>
-        </div>
-    </div>
-
-    <p class="role-alignment"><span>Alignment:</span> <span style="color: #f3d1e8;">Neutral (Evil)</span></p>
-    <p class="highlight">Goal:</p>
-    <li>Get yourself lynched by any means necessary.</li>
-
-    <p class="highlight">Abilities:</p>
-    <li>This role, upon being publicly executed, can choose one player to deal an unstoppable attack to.</li>
-
-    <p class="role-attributes-title">Attributes:</p>
-        <li>The Jester can only target a player who voted guilty or abstained.</li>
-	<li>If the Jester is not hung or is killed in a different way, the Jester loses.</li>
-</div>
-
-<div class="role-card">
-        <div class="image-container">
-            <img src="images/bodyguard-icon.png" alt="Role Icon">
-        </div>
-    <h3 class="role-title" style="color: #999999;">Executioner</h3>
-    <p class="role-description">An obsessed lyncher who will stop at nothing to execute their target.</p>
-
-    <div class="role-stats">
-        <div class="role-stat">
-            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
-        </div>
-        <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
-        </div>
-    </div>
-
-    <p class="role-alignment"><span>Alignment:</span> <span style="color: #999999;">Neutral (Evil)</span></p>
-    <p class="highlight">Goal:</p>
-    <li>Get your target lynched at any cost.</li>
-
-    <p class="highlight">Abilities:</p>
-    <li>This role is randomly assigned a target at the beginning of the game. This player can be any town role, excluding Jailor.</li>
-
-    <p class="role-attributes-title">Attributes:</p>
-        <li>If the Executioner's target dies before being lynched, the Executioner becomes a Jester.</li>
-	<li>If the Executioner's target lives, the Executioner loses.</li>
-</div>
 
 <div class="role-card">
         <div class="image-container">
@@ -1536,6 +1456,7 @@
     <p class="role-attributes-title">Attributes:</p>
         <li>Until the Changeling replaces someone, they will have basic defense.</li>
 	<li>The Changeling can only replace a player once.</li>
+	<li>There can only be one Changeling.</li>
 </div>
 
 <div class="role-card">
@@ -1550,7 +1471,7 @@
             <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
         </div>
         <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic (Barrier)</span>
         </div>
     </div>
 
@@ -1565,7 +1486,6 @@
 
     <p class="role-attributes-title">Attributes:</p>
         <li>The Auditor may choose to smokebomb the jailor if jailed.</li>
-	<li>The Auditor has a Basic Defense barrier, and will lose this barrier once attacked.</li>
 </div>
 
 <div class="role-card">
@@ -1580,7 +1500,7 @@
             <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
         </div>
         <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic (Barrier)</span>
         </div>
     </div>
 
@@ -1596,7 +1516,6 @@
     <p class="role-attributes-title">Attributes:</p>
         <li>Being starbound roleblocks the victim. This will have a different message than a normal roleblock. Players immune to Starbound will know they were attempted Starbound.</li>
 	<li>Starbound does not affect direct attackers.</li>
-	<li>The Starspawn has a Basic Defense barrier, and will lose this barrier once attacked.</li>
 	<li>There can only be one Starspawn.</li>
 </div>
 <div class="role-card">
@@ -1611,7 +1530,7 @@
             <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
         </div>
         <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic (Barrier)</span>
         </div>
     </div>
 
@@ -1790,6 +1709,61 @@
         <div class="image-container">
             <img src="images/bodyguard-icon.png" alt="Role Icon">
         </div>
+    <h3 class="role-title" style="color: #f3d1e8;">Jester</h3>
+    <p class="role-description">A crazed lunatic whose life goal is to be publicly executed.</p>
+
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
+        </div>
+        <div class="role-stat">
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>None</span>
+        </div>
+    </div>
+
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #f3d1e8;">Neutral (Chaos)</span></p>
+    <p class="highlight">Goal:</p>
+    <li>Get yourself lynched by any means necessary.</li>
+
+    <p class="highlight">Abilities:</p>
+    <li>This role, upon being publicly executed, can choose one player to deal an unstoppable attack to.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li>The Jester can only target a player who voted guilty or abstained.</li>
+	<li>If the Jester is not hung or is killed in a different way, the Jester loses.</li>
+</div>
+
+<div class="role-card">
+        <div class="image-container">
+            <img src="images/bodyguard-icon.png" alt="Role Icon">
+        </div>
+    <h3 class="role-title" style="color: #999999;">Executioner</h3>
+    <p class="role-description">An obsessed lyncher who will stop at nothing to execute their target.</p>
+
+    <div class="role-stats">
+        <div class="role-stat">
+            <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
+        </div>
+        <div class="role-stat">
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+        </div>
+    </div>
+
+    <p class="role-alignment"><span>Alignment:</span> <span style="color: #999999;">Neutral (Chaos)</span></p>
+    <p class="highlight">Goal:</p>
+    <li>Get your target lynched at any cost.</li>
+
+    <p class="highlight">Abilities:</p>
+    <li>This role is randomly assigned a target at the beginning of the game. This player can be any town role, excluding Jailor.</li>
+
+    <p class="role-attributes-title">Attributes:</p>
+        <li>If the Executioner's target dies before being lynched, the Executioner becomes a Jester.</li>
+	<li>If the Executioner's target lives, the Executioner loses.</li>
+</div>
+<div class="role-card">
+        <div class="image-container">
+            <img src="images/bodyguard-icon.png" alt="Role Icon">
+        </div>
     <h3 class="role-title" style="color: #f2c043;">Pirate</h3>
     <p class="role-description">A swashbuckler with an obsession for gold.</p>
 
@@ -1890,7 +1864,7 @@
             <img src="images/sword-icon.png" alt="Attack Icon"> <span>Powerful</span>
         </div>
         <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic (Barrier)</span>
         </div>
     </div>
 
@@ -1980,7 +1954,7 @@
             <img src="images/sword-icon.png" alt="Attack Icon"> <span>Basic</span>
         </div>
         <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic (Barrier)</span>
         </div>
     </div>
 
@@ -1992,7 +1966,7 @@
     <li>The Delusional will still not know they are insane, and the player they attempt to use an ability on will be killed instead. The target is random if the Delusional believes themself to be a non-visiting role.</li>
 
     <p class="role-attributes-title">Attributes:</p>
-        <li>The Delusional has basic defense for one hit. The Delusional will not know they were attacked.</li>
+        <li>Unless protected by another role, the Delusional will not know they were attacked.</li>
 </div>
 
 <div class="role-card">
@@ -2007,7 +1981,7 @@
             <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
         </div>
         <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic (Barrier)</span>
         </div>
     </div>
 
@@ -2038,7 +2012,7 @@
             <img src="images/sword-icon.png" alt="Attack Icon"> <span>None</span>
         </div>
         <div class="role-stat">
-            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic</span>
+            <img src="images/shield-icon.png" alt="Defense Icon"> <span>Basic (Barrier)</span>
         </div>
     </div>
 
